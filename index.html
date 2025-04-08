@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/gallery.css">
+    <title>JS - Gallery Homework</title>
+</head>
+<body>
+    <div id="image">
+        Hover over an image below to display here.
+    </div>
+
+    <img class="preview" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg" alt="Styling with a bandana" onmouseover="upDate(this)" onmouseout="unDo()">
+    <img class="preview" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG" alt="With my boy" onmouseover="upDate(this)" onmouseout="unDo()">
+    <img class="preview" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" alt="Young puppy" onmouseover="upDate(this)" onmouseout="unDo()">
+
+    <script type="text/javascript">
+        function upDate(previewPic) {
+            var imageUpdated = document.getElementById("image");
+
+            imageUpdated.style.backgroundImage = "url('" + previewPic.src + "')";
+
+            imageUpdated.innerHTML = previewPic.alt;
+        }
+
+        function unDo() {
+            var imageUpdated = document.getElementById('image');
+
+            imageUpdated.style.backgroundImage = "url('')";
+
+            imageUpdated.innerHTML = "Hover over an image below to display here."
+        }
+    </script>
+</body>
+</html>
